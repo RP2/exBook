@@ -10,6 +10,7 @@
 
     <!-- Custom CSS -->
     <link rel="stylesheet" href="/styles/style.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
     <!-- Google Maps API -->
     <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBHLett8djBo62dDXj0EjCimF8Rd6E8cxg"></script>
@@ -17,21 +18,28 @@
    <!-- Custom JS -->
     <script src="/scripts/app.js"></script>
 
+
+
   <title>ExBook</title>
 </head>
 
       <header>
         <nav>
           <div class="nav">
-            <a href="">Login</a>
+            <a href="" id="loginButton">Login</a>
           </div>
         </nav>
       </header>
-
   <body>
+    <div id="loginModal" class="modal">
+        <div class="modalContent">
+          <span class="close">&times;</span>
+          <!-- <img id="modalImg" src="#"> -->
+          <p id="modalP"></p>
+        </div>
+      </div>
       <div class="container">
         <div class="column">
-
           <div class="col-xs-12 col-md-12">
             <div id="map"></div>
           </div>
