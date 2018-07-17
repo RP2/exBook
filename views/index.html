@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+      <!-- set viewport to device width to allow responsiveness -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CDN -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="./style.css">
+
+    <!-- Google Maps API -->
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBHLett8djBo62dDXj0EjCimF8Rd6E8cxg"></script>
+
+   <!-- Custom JS -->
+    <script src="/scripts/app.js"></script>
+
+  <title>ExBook</title>
+</head>
+
+      <header>
+        <nav>
+          <div class="nav">
+            <a href="">Login</a>
+          </div>
+        </nav>
+      </header>
+
+  <body>
+      <div class="container">
+        <div class="column">
+
+          <div class="col-xs-12 col-md-12">
+            <div id="map"></div>
+          </div>
+
+          <div class="col-xs-12 col-md-12">
+            <div id="info">
+              <h1>EXBOOK - Find your Book</h1>
+            </div>
+          </div>
+
+          <div class="col-xs-12 col-md-12">
+            <div class="searchForm">
+              <form id="search" method="post" action="" name="quickSearch">
+                <fieldset class="fs-search">
+                  <input type="hidden" name="ds" value="20">
+                  <input type="hidden" name="sts" value="t">
+                  <label for="searchBy">Search</label>
+                    <select id="searchBy" name="sby">
+                      <option value="tit">By Title</option>
+                      <option value="volume">By ISBN</option>
+                  </select>
+                  <input class="search-in" id="searchText" type="text" name="stext" maxlength="100" aria-label="Search Exbook">
+                  <button id="search-btn" type="submit"><span>Find</span></button>
+                </fieldset>
+                <input type="hidden" name="cm-sp" value="Search-result">
+              </form>
+            </div>
+        </div>
+
+      </div>
+    </div>
+
+  </body>
+</html>
