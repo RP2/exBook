@@ -4,7 +4,7 @@ var usersList = [
 {
   username: "Mark01",
   password: "password",
-  location: 93933,
+  location: 94105,
   contact: "email@email.email",
   picture: "LINK-TO-IMG",
   posts: []
@@ -28,7 +28,7 @@ var usersList = [
 {
   username: "stephany",
   password: "password",
-  location: 93933,
+  location: 94016,
   contact: "email@email.email",
   picture: "LINK-TO-IMG",
   posts: []
@@ -101,7 +101,7 @@ usersList.forEach(function(user) {
   title: "art history",
   volume: 1,
   price: 1,
-  location: 93933
+  location: 94105
 });
     post3.save();
     user.posts.push(post3);
@@ -117,11 +117,11 @@ usersList.forEach(function(user) {
     user.posts.push(post4);
 
     var post5 = new db.Post({
-  subject: "science",
-  title: "micro biology for pros",
+  subject: "history",
+  title: "us history",
   volume: 10,
   price: 100,
-  location: 94587
+  location: 94016
 });
     post5.save();
     user.posts.push(post5);
