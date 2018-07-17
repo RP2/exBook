@@ -52,7 +52,6 @@ function mapSuccess(responce){
   console.log(responce);
   // marker(responce);
   initMap(responce);
-};
 
 var map;
 
@@ -64,11 +63,17 @@ function initMap(responce){
 
   for (var i = 0; i < responce.length; i++){
     var zip = responce[i].posts[i].location;
-    console.log(zip);
-    for (var j = 0; j < responce.length; j++){
       var geoLocate = `https://maps.googleapis.com/maps/api/geocode/json?address=${zip}`;
-      var pinLocation = geoLocate;
-      var LatLng = new google.maps.LatLng(pinLocation[0], pinLocation[1]);
+        $.ajax({
+          url: geoLocate,
+          method: 'GET',
+          success: pinSuccess,
+        });
+        function pinSuccess(responce){
+          console.log(responce.results[0].geometry.location);
+      var pinLat = responce.results[0].geometry.location.lat;
+      var pinLng = responce.results[0].geometry.location.lng;
+      var LatLng = new google.maps.LatLng(pinLat, pinLng);
       var marker = new google.maps.Marker({
         position: LatLng,
         map: map,
@@ -77,7 +82,7 @@ function initMap(responce){
     };
   };
 };
-
+};
 
 function mapError(error1, error2, error3){
     console.log(error1);
