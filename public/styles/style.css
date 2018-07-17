@@ -83,16 +83,23 @@ display: block;
     text-align: center;
     padding: 5px 200px;
 }
+#signupModal{
+    text-align: center;
+    padding: 5px 200px;
+}
 input {
   width: 100%;
 }
 
 /*Button*/
-#signupModal {
+#signupButton {
   font-weight:bold;
   text-decoration: underline
 }
-
+#signupButton{
+  background-color: none;
+  border:none;
+}
 .login-button {
   background-color: black;
   color: white;
@@ -100,13 +107,14 @@ input {
   margin-top: 10px;
   width: 100%;
 }
-#signupModal{
-  background-color: none;
-  border:none;
-  list-style-type: underline;
-  font-weight: 20px;
-  font-style: underline;
+.signup-button-p {
+  background-color: black;
+  color: white;
+  position: wrap;
+  margin-top: 10px;
+  width: 100%;
 }
+
 /*facebook icon*/
 .fa {
   width: 100%;
