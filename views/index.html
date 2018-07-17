@@ -27,12 +27,14 @@
     </nav>
   </header>
 <body>
+
+  <!-- Login Form -->
   <div id="loginModal" class="modal">
     <div class="modalContent">
       <span class="close">&times;</span>
       <!-- <img id="modalImg" src="#"> -->
       <p id="modalP"></p>
-        <span>Dont't have an account? <button id="signupModal" type="button">Sign up</button></span>
+        <span>Dont't have an account? <button id="signupModal signupButton" type="button">Sign up</button></span>
        <form id="loginForm" method="post">
 
       <div>
@@ -40,17 +42,14 @@
         <br>
         <input type="text" name="userName" data-input-field-enter-intercept="login">
       </div>
-
       <div>
         <label>Password</label>
         <br>
         <input type="password" name="Password" data-input-field-enter-intercept="login">
       </div>
-
       <div>
         <button type="button" class="login-button">Log in</button>
       </div>
-
       <div>
         <a href="">Forgot Password?</a>
       </div>
@@ -61,6 +60,37 @@
         </button>
     </div>
   </div>
+
+    <!-- Sign Up Form -->
+    <div id="signupModal" class="modal">
+    <div class="modalContent">
+      <span class="close">&times;</span>
+      <!-- <img id="modalImg" src="#"> -->
+      <p id="signupmodalP"></p>
+       <form id="SignupForm" method="get">
+
+      <div>
+        <label>Email Address</label>
+        <br>
+        <input type="text" name="userName" data-input-field-enter-intercept="signup">
+      </div>
+      <div>
+        <label>Password</label>
+        <br>
+        <input type="password" name="Password" data-input-field-enter-intercept="signup">
+      </div>
+      <div>
+        <button type="button" class="signup-button">Sign Up</button>
+      </div>
+
+       </form>
+       <hr>
+       <button class="fa fa-facebook" id="fb">
+          <div>Sign Up with Facebook</div>
+        </button>
+    </div>
+  </div>
+
 <div class="container">
   <div class="column">
     <div class="col-xs-12 col-md-12">
@@ -68,7 +98,7 @@
     </div>
     <div class="col-xs-12 col-md-12">
       <div id="info">
-        <h1>EXBOOK - Find your Book</h1>
+        <h1>exBOOK - Find your Book</h1>
       </div>
     </div>
     <div class="col-xs-12 col-md-12">

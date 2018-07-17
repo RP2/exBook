@@ -17,16 +17,18 @@ display: block;
 .nav a {
   float: left;
   display: block;
-  color: white;
+  color: grey;
   text-align: center;
   padding: 23px 16px;
   text-decoration: none;
   font-size: 25px;
   letter-spacing: 1px;
 }
-
+.nav h1{
+  color: white;
+}
 .nav a:hover {
-  color: #ffeeee;
+  color:white;
 }
 .container {
   padding-bottom: 50px;
@@ -64,24 +66,39 @@ display: block;
     border: 1px solid #888;
     width: 80%;
 }
+/*Search Form
+================================================*/
+#search-btn{
+   background-color: black;
+  color: white;
+  margin-top: 10px;
+}
+#info h1{
+  text-align: center;
+}
 
-/*Login Form*/
+/*Login Form
+================================================*/
 #loginModal{
     text-align: center;
+    padding: 5px 200px;
 }
 input {
-  padding: 5px 150px;
-  position: wrap;
-
+  width: 100%;
 }
+
 /*Button*/
+#signupModal {
+  font-weight:bold;
+  text-decoration: underline
+}
 
 .login-button {
   background-color: black;
   color: white;
-  padding: 5px 210px;
   position: wrap;
   margin-top: 10px;
+  width: 100%;
 }
 #signupModal{
   background-color: none;
@@ -93,8 +110,7 @@ input {
 }
 /*facebook icon*/
 .fa {
-    padding: 5px 170px;
-
+  width: 100%;
 }
 
 /* Add a hover effect if you want */
