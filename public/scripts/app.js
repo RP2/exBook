@@ -1,4 +1,4 @@
-var weekly_quakes_endpoint = "http://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/4.5_week.geojson";
+var book_endpoint = "http://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/4.5_week.geojson";
 
 $(document).ready(function() {
   console.log('app.js loaded!');
@@ -14,7 +14,7 @@ $('.close').on('click', function(){
   });
 
   $.ajax({
-    url: weekly_quakes_endpoint,
+    url: book_endpoint,
     method: 'GET',
     success: mapSuccess,
     error: mapError,
@@ -32,10 +32,10 @@ $('.close').on('click', function(){
 
 
 function mapSuccess(responce){
-  for (let i = 0; i < responce.features.length; i++){
-      mapTitle = responce.features[i].properties.place
-      $('#info').append('<p>' + mapTitle + '</p>');
-    };
+  // for (let i = 0; i < responce.features.length; i++){
+  //     mapTitle = responce.features[i].properties.place
+  //     $('#info').append('<p>' + mapTitle + '</p>');
+  //   };
   console.log(responce);
   // marker(responce);
   initMap(responce);
@@ -52,7 +52,6 @@ function initMap(responce){
   for (var i = 0; i < responce.features.length; i++){
     var pinLocation = responce.features[i].geometry.coordinates;
     var LatLng = new google.maps.LatLng(pinLocation[1], pinLocation[0]);
-
     var marker = new google.maps.Marker({
       position: LatLng,
       map: map,
