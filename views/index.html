@@ -73,7 +73,7 @@
        <form id="SignupForm" method="get">
 
       <div>
-        <label>Email Address</label>
+        <label>User Name</label>
         <br>
         <input type="text" name="userName" data-input-field-enter-intercept="signup">
       </div>
@@ -97,6 +97,40 @@
     <div id="postModal" class="modal">
     <div class="modalContent">
       <span class="close">&times;</span>
+            <p id="postmodalP"></p>
+       <form id="postForm" method="get">
+            <label for="subject">Subject</label>
+            <select id="subject" name="subjectby">
+              <option value="sub"> Archaeology & Anthropology</option>
+              <option value="sub"> Biological Sciences</option>
+              <option value="sub"> Chemistry</option>
+              <option value="sub"> Computer Science</option>
+              <option value="sub"> Engineering</option>
+              <option value="sub"> English</option>
+              <option value="sub"> Geography</option>
+              <option value="sub"> Law</option>
+              <option value="sub"> Mathematics</option>
+              <option value="sub"> Modern Languages</option>
+              <option value="sub"> Music</option>
+              <option value="sub"> Philosophy, Politics & Economics</option>
+              <option value="sub"> Theology & Religion</option>
+
+            </select>
+      <div>
+        <label>Title</label>
+        <br>
+        <input type="text" name="Title" data-input-field-enter-intercept="post">
+      </div>
+      <div>
+        <label>price</label>
+        <br>
+        <input type="text" name="price" data-input-field-enter-intercept="post">
+      </div>
+      <div>
+        <button type="button" class="post-button">Posting</button>
+      </div>
+       </form>
+
     </div>
   </div>
 
