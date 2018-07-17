@@ -25,6 +25,14 @@ $('.close').on('click', function(){
     $('#signupModal').hide();
   });
 
+$('#postButton').on('click', function(){
+  event.preventDefault();
+  $('#postModal').show();
+})
+$('.close').on('click', function(){
+    $('#postModal').hide();
+  });
+
 //begin map code
   $.ajax({
     url: book_endpoint,
