@@ -103,7 +103,6 @@ input {
 #signupModal{
   background-color: none;
   border:none;
-  display: inline-block;
   list-style-type: underline;
   font-weight: 20px;
   font-style: underline;

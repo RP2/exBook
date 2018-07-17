@@ -13,6 +13,18 @@ $('.close').on('click', function(){
     $('#loginModal').hide();
   });
 
+$('#signupButton').on('click', function(){
+  event.preventDefault();
+    $('#signupModal').show();
+    // $('#modalImg').attr('src', "./images/MG2.jpg");
+});
+$('#signupButton').on('click', function(){
+    $('#loginModal').hide();
+  });
+$('.close').on('click', function(){
+    $('#signupModal').hide();
+  });
+
 //begin map code
   $.ajax({
     url: book_endpoint,
