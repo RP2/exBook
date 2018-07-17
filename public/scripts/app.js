@@ -33,6 +33,14 @@ $('.close').on('click', function(){
     $('#postModal').hide();
   });
 
+$('#profileButton').on('click', function(){
+  event.preventDefault();
+  $('#profileModal').show();
+})
+$('.close').on('click', function(){
+    $('#profileModal').hide();
+  });
+
 //begin map code
   $.ajax({
     url: book_endpoint,
