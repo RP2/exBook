@@ -1,4 +1,5 @@
 var book_endpoint = "http://localhost:3000/api/users/"
+
 $(document).ready(function() {
   console.log('app.js loaded!');
 
@@ -49,15 +50,19 @@ function initMap(responce){
           zoom: 10
 });
 
-  for (var i = 0; i < responce.posts.length; i++){
-    var geoLocate = "https://maps.googleapis.com/maps/api/geocode/xml?address={location}";
-    var pinLocation = responce.geoLocate[i].geometry.location;
-    var LatLng = new google.maps.LatLng(pinLocation[1], pinLocation[0]);
-    var marker = new google.maps.Marker({
-      position: LatLng,
-      map: map,
-      icon: image
-    });
+  for (var i = 0; i < responce.length; i++){
+    var zip = responce[i].posts[i].location;
+    console.log(zip);
+    for (var j = 0; j < responce.length; j++){
+      var geoLocate = `https://maps.googleapis.com/maps/api/geocode/json?address=${zip}`;
+      var pinLocation = geoLocate;
+      var LatLng = new google.maps.LatLng(pinLocation[0], pinLocation[1]);
+      var marker = new google.maps.Marker({
+        position: LatLng,
+        map: map,
+        icon: image
+      });
+    };
   };
 };
 

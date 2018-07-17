@@ -116,6 +116,16 @@ usersList.forEach(function(user) {
     post4.save();
     user.posts.push(post4);
 
+    var post5 = new db.Post({
+  subject: "science",
+  title: "micro biology for pros",
+  volume: 10,
+  price: 100,
+  location: 94587
+});
+    post5.save();
+    user.posts.push(post5);
+
 });
 
 // usersList.forEach(function(user) {
