@@ -1,26 +1,19 @@
-// server.js
 // SERVER-SIDE JAVASCRIPT
 
-/////////////////////////////
-//  SETUP and CONFIGURATION
-/////////////////////////////
-
-//require express in our app
-var express = require("express"),
-  bodyParser = require("body-parser");
-
-// generate a new express app and call it 'app'
+// require Express, create an Express app
+var express = require('express');
 var app = express();
+var bodyParser = require('body-parser');
 
-//import models module
-const db = require("./models");
-
-// serve static files in public
-app.use(express.static("public"));
-
-// body parser config to accept our datatypes
+// add the body-parser middleware to the server
 app.use(bodyParser.urlencoded({ extended: true }));
-app.use(bodyParser.json());
+
+// serve the public directory as a static file directory
+app.use(express.static('public'));
+
+// Require the models directory in server.js
+var db = require('./models');
+var controllers = require('./controllers');
 
 ////////////////////
 //  ROUTES
@@ -31,3 +24,26 @@ app.get("/", (req, res) => {
   res.sendFile("views/index.html", { root: __dirname });
 });
 
+// create a new route for GET /api with callback controllers.api.index
+app.get('/api', controllers.api.index);
+app.get('/api/users', controllers.users.index);
+app.get('/api/users/:user_id', controllers.users.show);
+app.get('/api/users/:user_id/posts', controllers.usersPosts.index);
+
+app.post('/api/users', controllers.users.create);
+app.post('/api/users/:user_id/posts', controllers.usersPosts.create);
+
+app.put('/api/users/:id', controllers.users.update);
+app.put('/api/users/:user_id/posts/:post_id', controllers.usersPosts.update);
+
+app.delete('/api/users/:user_id', controllers.users.destroy);
+app.delete('/api/users/:user_id/posts/:post_id', controllers.usersPosts.destroy);
+
+/**********
+ * SERVER *
+**********/
+
+// tell the app to listen on a port so that the server will start
+app.listen(process.env.PORT || 3000, function () {
+  console.log('Express server is running on http://localhost:3000/');
+});
