@@ -1,6 +1,16 @@
 //our backend data//
 var book_endpoint = "http://localhost:3000/api/users/"
-
+///////////////////////////////////////////
+//////////nav function////////////
+///////////////////////////////////////////
+function myFunction() {
+    var x = document.getElementById("myTopnav");
+    if (x.className === "topnav") {
+        x.className += " responsive";
+    } else {
+        x.className = "topnav";
+    }
+};
 $(document).ready(function() {
   console.log('app.js loaded!');
   getBooks();
@@ -10,7 +20,6 @@ $(document).ready(function() {
 $('#loginButton').on('click', function(){
   event.preventDefault();
     $('#loginModal').show();
-    $('#modalP').html(`<p>Login or Sign up</p>`);
 });
 $('.close').on('click', function(){
     $('#loginModal').hide();
