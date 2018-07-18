@@ -166,6 +166,15 @@ input {
     color: white;
     font-family: 'Roboto', sans-serif;
 }
-/*r Result*/
+/* Result*/
+#results{
+    padding:0px 120px;
+    margin: 1%;
+    border-radius: 2px;
+    flex: 1 200px;
+    height: auto;
+    display: flex;
+    flex-direction: column;
 
+}
 
