@@ -7,7 +7,11 @@ var usersList = [
   location: 94105,
   contact: "email@email.email",
   picture: "LINK-TO-IMG",
-  posts: []
+  posts: [{subject: "science",
+  title: "micro biology for beginners",
+  volume: 7,
+  price: 15,
+  location: 94587}]
 },
 {
   username: "jon25687",
@@ -15,7 +19,16 @@ var usersList = [
   location: 94804,
   contact: "email@email.email",
   picture: "LINK-TO-IMG",
-  posts: []
+  posts: [{subject: "science",
+  title: "micro biology for beginners",
+  volume: 7,
+  price: 15,
+  location: 94587},
+  {subject: "science",
+  title: "micro biology for beginners",
+  volume: 7,
+  price: 15,
+  location: 94587}]
 },
 {
   username: "bigboy77",

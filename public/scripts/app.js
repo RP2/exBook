@@ -2,6 +2,7 @@ var book_endpoint = "http://localhost:3000/api/users/"
 
 $(document).ready(function() {
   console.log('app.js loaded!');
+  getBooks();
 ///////////////////////////////////////////
 //////////login button function////////////
 ///////////////////////////////////////////
@@ -60,7 +61,7 @@ $('#postForm').on('submit', function(event){
   var formData = $(this).serialize();
   console.log(formData);
     $.post('/api/users/5b4e784628f651a6289793b9/posts', formData, function(post) {
-      // renderPost(post);
+      renderPost(post);
     })
     // reset form input values after formData has been captured
     $(this).trigger("reset");
@@ -84,12 +85,16 @@ $('#postDelete').on('click', function(e) {
 // }
 
 //////////////////////////begin map code//////////////////////////
-  $.ajax({
+function getBooks() {
+    $.ajax({
     url: book_endpoint,
     method: 'GET',
     success: mapSuccess,
     error: mapError,
   });
+}
+
+
 
   var mapTitle;
   var thePosition;
@@ -104,10 +109,12 @@ $('#postDelete').on('click', function(e) {
 
 function mapSuccess(responce){
   for (let i = 0; i < responce.length; i++){
-      mapTitle = responce[i].posts[i].title;
-      mapPrice = responce[i].posts[i].price;
+    for(let j = 0; j < responce.length; j++){
+      mapTitle = responce[i].posts[j].title;
+      mapPrice = responce[i].posts[j].price;
       $('#results').append('<p>' + mapTitle + ', $' + mapPrice + '</p>');
-    };
+    }
+  };
   console.log(responce);
 // marker(responce);
   initMap(responce);
@@ -120,23 +127,25 @@ function mapSuccess(responce){
     });
 //show map markers
     for (var i = 0; i < responce.length; i++){
-      var zip = responce[i].posts[i].location;
-        var geoLocate = `https://maps.googleapis.com/maps/api/geocode/json?address=${zip}`;
-          $.ajax({
-            url: geoLocate,
-            method: 'GET',
-            success: pinSuccess,
+      for(let j = 0; j < responce.length; j++){
+        var zip = responce[i].posts[j].location;
+          var geoLocate = `https://maps.googleapis.com/maps/api/geocode/json?address=${zip}`;
+            $.ajax({
+              url: geoLocate,
+              method: 'GET',
+              success: pinSuccess,
+            });
+            function pinSuccess(responce){
+              console.log(responce.results[0].geometry.location);
+          var pinLat = responce.results[0].geometry.location.lat;
+          var pinLng = responce.results[0].geometry.location.lng;
+          var LatLng = new google.maps.LatLng(pinLat, pinLng);
+          var marker = new google.maps.Marker({
+            position: LatLng,
+            map: map,
+            icon: image
           });
-          function pinSuccess(responce){
-            console.log(responce.results[0].geometry.location);
-        var pinLat = responce.results[0].geometry.location.lat;
-        var pinLng = responce.results[0].geometry.location.lng;
-        var LatLng = new google.maps.LatLng(pinLat, pinLng);
-        var marker = new google.maps.Marker({
-          position: LatLng,
-          map: map,
-          icon: image
-        });
+       };
       };
     };
   };
@@ -147,4 +156,5 @@ function mapError(error1, error2, error3){
     console.log(error2);
     console.log(error3);
   };
-});
+
+}); // END DOCUMENT READY
