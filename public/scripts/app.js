@@ -60,7 +60,7 @@ $('#postForm').on('submit', function(event){
   var formData = $(this).serialize();
   console.log(formData);
     $.post('/api/users/5b4e784628f651a6289793b9/posts', formData, function(post) {
-      renderAlbum(post);
+      // renderPost(post);
     })
     // reset form input values after formData has been captured
     $(this).trigger("reset");
@@ -78,6 +78,10 @@ $('#postDelete').on('click', function(e) {
     }
   });
 });
+
+// function renderPost(post) {
+//   $('#results').append(this);
+// }
 
 //////////////////////////begin map code//////////////////////////
   $.ajax({
