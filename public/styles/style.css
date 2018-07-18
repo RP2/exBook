@@ -1,7 +1,11 @@
-@import url('https://fonts.googleapis.com/css?family=Roboto');
 
 body{
-  font-family: 'Roboto', sans-serif;
+font-family: 'Arvo', serif;
+}
+input{
+  padding: 5px;
+  margin: 5px;
+
 }
 /* Nav info
 ================================================*/
@@ -32,13 +36,14 @@ display: block;
   float: right;
   font-size: 15px;
   display: block;
-  color: grey;
+  color: #cccccc;
   padding: 23px 5px;
   margin-top: 15px;
 }
 .nav a:hover {
   color:white;
 }
+
 
 /* map
 ================================================*/
@@ -80,6 +85,14 @@ display: block;
 }
 /*Search Form
 ================================================*/
+#search {
+  background: #dddddd;
+  padding: 8px
+}
+.search-in{
+  margin-top: 5px;
+  width: 70%;
+}
 #search-btn{
    background-color: black;
   color: white;
@@ -126,7 +139,17 @@ input {
   margin-top: 10px;
   width: 100%;
 }
-
+/*Posting Page*/
+#postSubmit {
+  background-color: black;
+  color: white;
+  position: wrap;
+  margin-top: 10px;
+  width: 100%;
+}
+#postForm h1{
+  text-align: center;
+}
 /*facebook icon*/
 .fa {
   width: 100%;
@@ -143,4 +166,6 @@ input {
     color: white;
     font-family: 'Roboto', sans-serif;
 }
+/*r Result*/
+
 

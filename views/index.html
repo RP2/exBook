@@ -8,13 +8,16 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <!-- Custom CSS -->
     <link rel="stylesheet" href="/styles/style.css">
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <!--Font style -->
+    <link href="https://fonts.googleapis.com/css?family=Arvo" rel="stylesheet">
+    <!-- Add icon library -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- outsite resourse? -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <!-- Google Maps API -->
     <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBHLett8djBo62dDXj0EjCimF8Rd6E8cxg"></script>
    <!-- Custom JS -->
     <script src="/scripts/app.js"></script>
-    <!-- Add icon library -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
   <title>exBook</title>
 </head>
@@ -40,22 +43,12 @@
       <span class="close">&times;</span>
       <!-- <img id="modalImg" src="#"> -->
       <p id="modalP"></p>
-        <span>Dont't have an account? <button id="signupButton" type="button">Sign up</button></span>
-       <form id="loginForm" method="post">
-
-      <div>
-        <label>User Name</label>
-        <br>
-        <input type="text" name="userName" data-input-field-enter-intercept="login">
-      </div>
-      <div>
-        <label>Password</label>
-        <br>
-        <input type="password" name="Password" data-input-field-enter-intercept="login">
-      </div>
-      <div>
-        <button type="button" class="login-button">Log in</button>
-      </div>
+      <h1>exBook</h1>
+      <span>Dont't have an account? <button id="signupButton" type="button">Sign up</button></span>
+      <form id="loginForm" method="post">
+      <input type="text" placeholder="User Name">
+      <input type="text" placeholder="Password">
+      <button type="button" class="login-button">Log in</button>
       <div>
         <a href="">Forgot Password?</a>
       </div>
@@ -72,21 +65,13 @@
     <div class="modalContent">
       <span class="close">&times;</span>
       <p id="signupmodalP"></p>
+       <h1>exBook</h1>
        <form id="SignupForm" method="get">
-
-      <div>
-        <label>User Name</label>
-        <br>
-        <input type="text" name="userName" data-input-field-enter-intercept="signup">
-      </div>
-      <div>
-        <label>Password</label>
-        <br>
-        <input type="password" name="Password" data-input-field-enter-intercept="signup">
-      </div>
-      <div>
-        <button type="button" class="signup-button-p">Sign Up</button>
-      </div>
+      <input type="text" placeholder="User Name">
+      <input type="text" placeholder="Password">
+      <input type="number" placeholder="zipcode">
+      <input type="email" placeholder="email">
+      <button type="button" class="signup-button-p">Sign Up</button>
        </form>
        <hr>
        <button class="fa fa-facebook" id="fb">
@@ -100,9 +85,10 @@
   <div class="modalContent">
     <span class="close">&times;</span>
     <form id="postForm">
+      <h1>exBook -  Sell your book</h1>
       <input type="text" placeholder="subject">
       <input type="text" placeholder="title">
-      <input type="number" placeholder="volume">
+      <input type="number" placeholder="volume/ISBN">
       <input type="number" placeholder="price">
       <input type="number" placeholder="zipcode">
       <button type="submit" id="postSubmit">submit</button>
@@ -127,7 +113,7 @@
 <!--  Search form -->
     <div class="col-xs-12 col-md-12">
       <div id="info">
-        <h1>exBOOK - Find your Book</h1>
+        <h1>exBook - Find your Book</h1>
       </div>
     </div>
     <div class="col-xs-12 col-md-12">
