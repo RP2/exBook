@@ -54,38 +54,30 @@ $('.close').on('click', function(){
 
 /////////////////////begin post function code//////////////////////
 
-$('#postForm').on('submit', function(e){
-  e.preventDefault();
+$('#postForm').on('submit', function(event){
+  event.preventDefault();
+  console.log('add-post clicked!');
   var formData = $(this).serialize();
-  $.post('/api/users/:user_id/posts', formData, function(post){
-    renderPost(post);
-  })
-  $(this).trigger('reset');
+  console.log(formData);
+    $.post('/api/users/5b4e784628f651a6289793b9/posts', formData, function(post) {
+      renderAlbum(post);
+    })
+    // reset form input values after formData has been captured
+    $(this).trigger("reset");
 });
 
-  // add click handler to 'add post' buttons
-  $('#posts').on('click', '.add-post', function(e) {
-    console.log('add-post clicked!');
-
-    var id = $(this).closest('.post').data('post-id');
-    console.log('id', id);
-
-    $('#postModal').data('post-id', id);
-    $('#postModal').modal();
+$('#postDelete').on('click', function(e) {
+  var id = $(this).closest('.post').data('post-id');
+  console.log('id', id);
+  $.ajax({
+    url: '/api/users/5b4e784628f651a6289793b9/posts' + id,
+    type: 'DELETE',
+    success: function(result) {
+      console.log('deleted post')
+      $('[data-post-id=' + id + ']').remove();
+    }
   });
-
-  $('#posts').on('click', '.delete-post', function(e) {
-    var id = $(this).closest('.post').data('post-id');
-    console.log('id', id);
-
-    $.ajax({
-      url: '/api/users/:user_id/posts' + id,
-      type: 'DELETE',
-      success: function(result) {
-        $('[data-post-id=' + id + ']').remove();
-      }
-    });
-  });
+});
 
 //////////////////////////begin map code//////////////////////////
   $.ajax({
@@ -113,38 +105,37 @@ function mapSuccess(responce){
       $('#results').append('<p>' + mapTitle + ', $' + mapPrice + '</p>');
     };
   console.log(responce);
-  // marker(responce);
+// marker(responce);
   initMap(responce);
-
-var map;
-
-function initMap(responce){
-  map = new google.maps.Map(document.getElementById('map'), {
-          center: {lat: 37.78, lng: -122.44},
-          zoom: 10
-});
-
-  for (var i = 0; i < responce.length; i++){
-    var zip = responce[i].posts[i].location;
-      var geoLocate = `https://maps.googleapis.com/maps/api/geocode/json?address=${zip}`;
-        $.ajax({
-          url: geoLocate,
-          method: 'GET',
-          success: pinSuccess,
+  var map;
+//initialize map
+    function initMap(responce){
+      map = new google.maps.Map(document.getElementById('map'), {
+        center: {lat: 37.78, lng: -122.44},
+        zoom: 10
+    });
+//show map markers
+    for (var i = 0; i < responce.length; i++){
+      var zip = responce[i].posts[i].location;
+        var geoLocate = `https://maps.googleapis.com/maps/api/geocode/json?address=${zip}`;
+          $.ajax({
+            url: geoLocate,
+            method: 'GET',
+            success: pinSuccess,
+          });
+          function pinSuccess(responce){
+            console.log(responce.results[0].geometry.location);
+        var pinLat = responce.results[0].geometry.location.lat;
+        var pinLng = responce.results[0].geometry.location.lng;
+        var LatLng = new google.maps.LatLng(pinLat, pinLng);
+        var marker = new google.maps.Marker({
+          position: LatLng,
+          map: map,
+          icon: image
         });
-        function pinSuccess(responce){
-          console.log(responce.results[0].geometry.location);
-      var pinLat = responce.results[0].geometry.location.lat;
-      var pinLng = responce.results[0].geometry.location.lng;
-      var LatLng = new google.maps.LatLng(pinLat, pinLng);
-      var marker = new google.maps.Marker({
-        position: LatLng,
-        map: map,
-        icon: image
-      });
+      };
     };
   };
-};
 };
 
 function mapError(error1, error2, error3){

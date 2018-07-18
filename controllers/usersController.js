@@ -20,7 +20,9 @@ function create(req, res) {
 // GET /api/users/:userId
 function show(req, res) {
   // find one user by id and send it back as JSON
-  db.User.findById(req.params.user_id, function(err, foundUser) {
+  var test = req.params.user_id;
+  db.User.findById(test, function(err, foundUser) {
+    console.log(foundUser)
     res.json(foundUser);
   });
 }

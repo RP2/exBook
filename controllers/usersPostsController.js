@@ -2,7 +2,7 @@ var db = require('../models');
 
 // GET '/api/users/:userId/posts'
 function index(req, res) {
-  db.User.findById(req.params.User_id, function(err, foundUser) {
+  db.User.findById(req.params.user_id, function(err, foundUser) {
     res.json(foundUser.posts);
   });
 }
