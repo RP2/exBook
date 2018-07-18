@@ -3,33 +3,45 @@
 body{
   font-family: 'Roboto', sans-serif;
 }
-
+/* Nav info
+================================================*/
 header{
 padding:0 ;
 margin:0;
 display: block;
 }
+#logo{
+  color:white;
+  font-size: 30px;
+  margin-left: 20px;
+  float: left;
+}
 .nav {
   overflow: hidden;
   background-color: black;
+  display: block;
 }
-
 .nav a {
   float: left;
-  display: block;
-  color: grey;
   text-align: center;
   padding: 23px 16px;
   text-decoration: none;
-  font-size: 25px;
-  letter-spacing: 1px;
+
 }
-.nav h1{
-  color: white;
+.navButton a {
+  float: right;
+  font-size: 15px;
+  display: block;
+  color: grey;
+  padding: 23px 5px;
+  margin-top: 15px;
 }
 .nav a:hover {
   color:white;
 }
+
+/* map
+================================================*/
 .container {
   padding-bottom: 50px;
 }
