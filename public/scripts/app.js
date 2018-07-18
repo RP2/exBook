@@ -104,6 +104,14 @@ function getBooks() {
   });
 }
 
+//////////////////////begin search function code///////////////////
+
+$('.searchForm').on('submit', function(event){
+  event.preventDefault();
+  console.log('find button clicked!');
+
+});
+
 //////////////////////////begin map code//////////////////////////
 
   var mapTitle;
