@@ -108,13 +108,16 @@ function getBooks() {
 
 
 function mapSuccess(responce){
-  for (let i = 0; i < responce.length; i++){
-    for(let j = 0; j < responce.length; j++){
-      mapTitle = responce[i].posts[j].title;
-      mapPrice = responce[i].posts[j].price;
+  responce.forEach(function(user){
+    console.log(user.posts);
+  for (let i = 0; i < user.posts.length; i++){
+    // for(let j = 0; j < responce.length; j++){
+      mapTitle = user.posts[i].title;
+      mapPrice = user.posts[i].price;
       $('#results').append('<p>' + mapTitle + ', $' + mapPrice + '</p>');
     }
-  };
+  // };
+});
   console.log(responce);
 // marker(responce);
   initMap(responce);
@@ -126,9 +129,9 @@ function mapSuccess(responce){
         zoom: 10
     });
 //show map markers
-    for (var i = 0; i < responce.length; i++){
-      for(let j = 0; j < responce.length; j++){
-        var zip = responce[i].posts[j].location;
+responce.forEach(function(user){
+    for (var i = 0; i < user.posts.length; i++){
+        var zip = user.posts[i].location;
           var geoLocate = `https://maps.googleapis.com/maps/api/geocode/json?address=${zip}`;
             $.ajax({
               url: geoLocate,
@@ -147,7 +150,7 @@ function mapSuccess(responce){
           });
        };
       };
-    };
+    });
   };
 };
 
