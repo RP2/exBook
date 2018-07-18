@@ -68,7 +68,7 @@ $('#postForm').on('submit', function(event){
   console.log('add-post clicked!');
   var formData = $(this).serialize();
   console.log(formData);//user id//
-    $.post('/api/users/5b4f9e75de2f4cb114616274/posts', formData, function(post) {
+    $.post('/api/users/5b4fbcf5c960afb5f7aff48d/posts', formData, function(post) {
       $('#results').html('');
       getBooks();
     })
@@ -80,16 +80,17 @@ $('#results').on('click', '#deletePost', function(event) {
   // var id = $(this).parent('#deletePost').data('mapId');
   console.log(this);
   var id = $(this).parent().data('id');
-  // console.log(this.parent)
-  // console.log('id', id);
-  // $.ajax({
-  //   url: '/api/users/5b4f9e75de2f4cb114616274/posts' + id,
-  //   type: 'DELETE',
-  //   success: function(result) {
-  //     console.log('deleted post')
-  //     $('[data-post-id=' + id + ']').remove();
-  //   }
-  // });
+  console.log('id', id);
+  $.ajax({
+    url: `/api/users/5b4fbcf5c960afb5f7aff48d/posts/${id}`, //deletes matching id
+    type: 'DELETE',
+    success: function(result) {
+      console.log('deleted post')
+      // $(id).remove();
+      $('#results').html('');
+      getBooks();
+    }
+  });
 });
 
 ////init map////

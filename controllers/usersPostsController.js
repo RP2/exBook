@@ -48,7 +48,7 @@ function destroy(req, res) {
   db.User.findById(req.params.user_id, function(err, foundUser) {
     console.log(foundUser);
     // we've got the user, now find the post within it
-    var correctPost = foundUSer.posts.id(req.params.post_id);
+    var correctPost = foundUser.posts.id(req.params.post_id);
     if (correctPost) {
       correctPost.remove();
       // resave the user now that the post is gone
