@@ -60,8 +60,9 @@ $('#postForm').on('submit', function(event){
   console.log('add-post clicked!');
   var formData = $(this).serialize();
   console.log(formData);
-    $.post('/api/users/5b4e784628f651a6289793b9/posts', formData, function(post) {
-      renderPost(post);
+    $.post('/api/users/5b4f9e75de2f4cb114616274/posts', formData, function(post) {
+      $('#results').html('');
+      getBooks();
     })
     // reset form input values after formData has been captured
     $(this).trigger("reset");
@@ -71,7 +72,7 @@ $('#postDelete').on('click', function(e) {
   var id = $(this).closest('.post').data('post-id');
   console.log('id', id);
   $.ajax({
-    url: '/api/users/5b4e784628f651a6289793b9/posts' + id,
+    url: '/api/users/5b4f9e75de2f4cb114616274/posts' + id,
     type: 'DELETE',
     success: function(result) {
       console.log('deleted post')
