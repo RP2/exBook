@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
+  <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1">
       <!-- set viewport to device width to allow responsiveness -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- Bootstrap CDN -->
@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="/styles/style.css">
     <!--Font style -->
     <link href="https://fonts.googleapis.com/css?family=Arvo" rel="stylesheet">
-    <!-- Add icon library -->
+    <!-- Add hamburg icon library -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <!-- outsite resourse? -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -23,14 +23,12 @@
 </head>
   <header>
     <nav>
-      <div class="nav">
-        <a id="logo">exBook</a>
-          <div class ="navButton">
-        <a href="" id="loginButton">Login</a>
-        <a>|</a>
-        <a href="" id="postButton">Post</a>
-        <a href="" id="aboutButton">About Us</a>
-
+      <div class="topnav" id="myTopnav">
+        <a id="logo" class="active">exBook</a>
+        <a href="" id="loginButton" class="functionButton">Login</a>
+        <a href="" id="postButton" class="functionButton">Post</a>
+      <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+        <i class="fa fa-bars"></i> </a>
          </div>
       </div>
     </nav>
