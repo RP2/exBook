@@ -67,11 +67,12 @@ $('#postForm').on('submit', function(event){
     $(this).trigger("reset");
 });
 
-$('#results').on('click', function(event) {
+$('#results').on('click', '#deletePost', function(event) {
   // var id = $(this).parent('#deletePost').data('mapId');
-  var id = $(this).children().data('id');
+  console.log(this);
+  var id = $(this).parent().data('id');
   // console.log(this.parent)
-  console.log('id', id);
+  // console.log('id', id);
   // $.ajax({
   //   url: '/api/users/5b4f9e75de2f4cb114616274/posts' + id,
   //   type: 'DELETE',
