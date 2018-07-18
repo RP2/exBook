@@ -107,7 +107,7 @@ function mapSuccess(responce){
   for (let i = 0; i < responce.length; i++){
       mapTitle = responce[i].posts[i].title;
       mapPrice = responce[i].posts[i].price;
-      $('#info').append('<p>' + mapTitle + ', $' + mapPrice + '</p>');
+      $('#results').append('<p>' + mapTitle + ', $' + mapPrice + '</p>');
     };
   console.log(responce);
   // marker(responce);
