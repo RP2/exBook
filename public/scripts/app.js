@@ -38,6 +38,9 @@ $('#postButton').on('click', function(){
 $('.close').on('click', function(){
     $('#postModal').hide();
   });
+$('#postSubmit').on('click', function(){
+    $('#postModal').hide();
+  });
 ////////////////////////////////////////////
 //////////profile button function///////////
 ////////////////////////////////////////////

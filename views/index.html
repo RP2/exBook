@@ -96,45 +96,19 @@
   </div>
 
     <!-- Posting Form -->
-    <div id="postModal" class="modal">
-    <div class="modalContent">
-      <span class="close">&times;</span>
-            <p id="postmodalP"></p>
-       <form id="postForm" method="get">
-            <label for="subject">Subject</label>
-            <select id="subject" name="subjectby">
-              <option value="sub"> Archaeology & Anthropology</option>
-              <option value="sub"> Biological Sciences</option>
-              <option value="sub"> Chemistry</option>
-              <option value="sub"> Computer Science</option>
-              <option value="sub"> Engineering</option>
-              <option value="sub"> English</option>
-              <option value="sub"> Geography</option>
-              <option value="sub"> Law</option>
-              <option value="sub"> Mathematics</option>
-              <option value="sub"> Modern Languages</option>
-              <option value="sub"> Music</option>
-              <option value="sub"> Philosophy, Politics & Economics</option>
-              <option value="sub"> Theology & Religion</option>
-
-            </select>
-      <div>
-        <label>Title</label>
-        <br>
-        <input type="text" name="Title" data-input-field-enter-intercept="post">
-      </div>
-      <div>
-        <label>price</label>
-        <br>
-        <input type="text" name="price" data-input-field-enter-intercept="post">
-      </div>
-      <div>
-        <button type="button" class="post-button">Posting</button>
-      </div>
-       </form>
-
-    </div>
+<div id="postModal" class="modal">
+  <div class="modalContent">
+    <span class="close">&times;</span>
+    <form id="postForm">
+      <input type="text" placeholder="subject">
+      <input type="text" placeholder="title">
+      <input type="number" placeholder="volume">
+      <input type="number" placeholder="price">
+      <input type="number" placeholder="zipcode">
+      <button type="submit" id="postSubmit">submit</button>
+    </form>
   </div>
+</div>
 
     <!-- profile Form -->
     <div id="profileModal" class="modal">
