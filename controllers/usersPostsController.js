@@ -9,12 +9,11 @@ function index(req, res) {
 
 // POST '/api/users/:userId/posts'
 function create(req, res) {
-  db.User.findById(req.params.User_id, function(err, foundUser) {
-
+  db.User.findById(req.params.user_id, function(err, foundUser) {
     // dangerous – in a real app, we'd validate the incoming data
     var newPost = new db.Post(req.body);
 
-    foundUser.Posts.push(newPost);
+    foundUser.posts.push(newPost);
     foundUser.save(function(err, savedUser) {
       // responding with post in JSON
       // some APIs may respond with parent obj as well (e.g. founduser)
