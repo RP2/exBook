@@ -124,8 +124,9 @@ function getBooks() {
 
   //////////////////////begin search function code///////////////////
 
-$('.searchForm').on('submit', function(event){
+$('#searchForm').on('submit', function(event){
   event.preventDefault();
+    console.log(this)
   var searchData = $(this).serialize();
   console.log('find button clicked!');
   $.ajax({
@@ -134,7 +135,6 @@ $('.searchForm').on('submit', function(event){
     success: searchSuccess,
     error: mapError
   });
-  console.log(this)
   function searchSuccess(responce){
     responce.forEach(function(user){
       for (let i = 0; i < user.posts.length; i++){
