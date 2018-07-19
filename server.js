@@ -7,6 +7,7 @@ var bodyParser = require('body-parser');
 
 // add the body-parser middleware to the server
 app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json());
 
 // serve the public directory as a static file directory
 app.use(express.static('public'));
@@ -25,6 +26,8 @@ app.get("/", (req, res) => {
 });
 
 // create a new route for GET /api with callback controllers.api.index
+app.post('/', controllers.users.login);
+
 app.get('/api', controllers.api.index);
 app.get('/api/users', controllers.users.index);
 app.get('/api/users/:user_id', controllers.users.show);

@@ -1,6 +1,8 @@
 //our backend data//
 var book_endpoint = "http://localhost:3000/api/users/"
 
+let signedIn;
+
 //document on ready//
 $(document).ready(function() {
   console.log('app.js loaded!');
@@ -78,7 +80,21 @@ $('.close').on('click', function(){
 $('#loginForm').on('submit', function(event){
   event.preventDefault();
   var loginData = $(this).serialize();
+  // var loginData = JSON.stringify({username: $('#loginForm input[name="username"]').val(), password: $('#loginForm input[name="password"]').val()});
   console.log(loginData);
+  $.ajax({
+    url: "http://localhost:3000",
+    method: 'POST',
+    data: loginData,
+    success: loginSuccess,
+    error: mapError
+  });
+  function loginSuccess(responce){
+    console.log('Res', responce)
+    signedIn = responce._id;
+    console.log('user', signedIn)
+    $('.loginButton').removeClass('loginButton').addClass('logoutButton').html('<h3>Sign out</h3>')
+  };
 })
 
 /////////////////////begin post function code//////////////////////
@@ -88,7 +104,7 @@ $('#postForm').on('submit', function(event){
   console.log('add-post clicked!');
   var formData = $(this).serialize();
   console.log(formData);//user id//
-    $.post('/api/users/5b4fbcf5c960afb5f7aff48d/posts', formData, function(post) {
+    $.post(`/api/users/${signedIn}/posts`, formData, function(post) {
       $('#results').html('');
       getBooks();
     })
@@ -102,7 +118,7 @@ $('#results').on('click', '#deletePost', function(event) {
   var id = $(this).parent().data('id');
   console.log('id', id);
   $.ajax({
-    url: `/api/users/5b4fbcf5c960afb5f7aff48d/posts/${id}`, //deletes matching id
+    url: `/api/users/${signedIn}/posts/${id}`, //deletes matching id
     type: 'DELETE',
     success: function(result) {
       console.log('deleted post')
@@ -114,7 +130,6 @@ $('#results').on('click', '#deletePost', function(event) {
 });
 
 ////init map////
-
 function getBooks() {
     $.ajax({
     url: book_endpoint,
@@ -207,7 +222,7 @@ responce.forEach(function(user){
           map: map,
           icon: image
         });
-       };
+       }; //end of pinSuccess
       };
     });
   };

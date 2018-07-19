@@ -7,6 +7,18 @@ function index(req, res) {
     res.json(allUsers);
   });
 }
+//login function
+function login(req,res) {
+  console.log(req.body)
+  db.User.findOne({username: req.body.username}, function(err, foundUser){
+    if (err) { console.log('error', err); }
+    if (foundUser){
+      if (foundUser.password === req.body.password){
+        res.json(foundUser);
+      } else {res.status(400)}
+    }
+  })
+}
 
 // POST /api/users
 function create(req, res) {
@@ -58,6 +70,7 @@ function update(req, res) {
 
 module.exports = {
   index: index,
+  login: login,
   create: create,
   show: show,
   destroy: destroy,
