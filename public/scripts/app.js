@@ -126,7 +126,8 @@ function getBooks() {
 
 $('#searchForm').on('submit', function(event){
   event.preventDefault();
-  var searchData = $(this).serialize();
+  $('#results').html('');
+  var searchData = $('#searchForm input').val();
   $.ajax({
     url: book_endpoint,
     method: 'GET',
@@ -135,18 +136,18 @@ $('#searchForm').on('submit', function(event){
   });
   function searchSuccess(responce){
     responce.forEach(function(user){
+      console.log(user)
       for (let i = 0; i < user.posts.length; i++){
         var bookTitle = user.posts[i].title;
-        console.log(searchData, bookTitle)
-        if(searchData === bookTitle[i]){
-          $('#results').html('');
-          $('#results').append(`${bookTitle[i]}`);
-        }
-        if(searchData !== bookTitle[i]) {
-          $('#results').html(`<p>Book does not exist!</p>`);
+        // console.log('Looped Book Title = ', bookTitle)
+        // console.log(searchData, bookTitle)
+        if (searchData == bookTitle){
+          console.log('found book!', searchData, ' = ', bookTitle);
+          $('#results').append(`<h3>${bookTitle} exists!</h3>`);
         }
       };
     });
+    getBooks();
   };
   $(this).trigger("reset");
 });
