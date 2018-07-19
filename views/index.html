@@ -2,19 +2,19 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1">
+      <!--documentation : https://github.com/RP2/exBook -->
       <!-- set viewport to device width to allow responsiveness -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- Custom CSS -->
     <link rel="stylesheet" href="/styles/style.css">
     <!-- Add hamburg icon library -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <!-- outsite resourse? -->
+    <!-- import jquery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <!-- Google Maps API -->
     <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBHLett8djBo62dDXj0EjCimF8Rd6E8cxg"></script>
-   <!-- Custom JS -->
+   <!-- our front end JS -->
     <script src="/scripts/app.js"></script>
-
   <title>exBook</title>
 </head>
 <body>
@@ -34,46 +34,47 @@
       <a href="" class="postButton"><h3>Post</h3></a>
     </div>
   </nav>
-  <!-- Login Form -->
-  <div id="loginModal" class="modal">
-    <div class="modalContent">
-      <span class="close">&times;</span>
-      <h1>exBook</h1>
-      <div id="da"><h4 class="span">Dont't have an account? <button id="signupButton" type="button">Sign up</button></h4></div>
-      <form id="loginForm" method="post">
-      <input type="text" placeholder="User Name">
-      <input type="text" placeholder="Password">
-      <button type="button" class="login-button">Log in</button>
-      <div>
-        <a href="">Forgot Password?</a>
-      </div>
-       </form>
-       <hr>
-       <button class="fa fa-facebook" id="fb">
-          <div>Log in with Facebook</div>
-        </button>
-    </div>
-  </div>
 
-    <!-- Sign Up Form -->
-    <div id="signupModal" class="modal">
-    <div class="modalContent">
-      <span class="close">&times;</span>
-      <p id="signupmodalP"></p>
-       <h1>exBook</h1>
-       <form id="SignupForm" method="get">
-      <input type="text" placeholder="User Name">
-      <input type="text" placeholder="Password">
-      <input type="number" placeholder="zipcode">
-      <input type="email" placeholder="email">
-      <button type="button" class="signup-button-p">Sign Up</button>
-       </form>
-       <hr>
-       <button class="fa fa-facebook" id="fb">
-          <div>Sign Up with Facebook</div>
-        </button>
+<!-- Login Form -->
+<div id="loginModal" class="modal">
+  <div class="modalContent">
+    <span class="close">&times;</span>
+    <h1>exBook</h1>
+    <p class="span">Dont't have an account? <button id="signupButton" type="button">Sign up</button></p>
+    <form id="loginForm">
+      <input type="text" name="username" placeholder="User Name">
+      <input type="text" name="password" placeholder="Password">
+      <button type="submit" id="loginSubmit" name="submit" class="login-button">Log in</button>
+    </form>
+    <div>
+      <a href="">Forgot Password?</a>
     </div>
+     <hr>
+     <button class="fa fa-facebook" id="fb">
+        <div>Log in with Facebook</div>
+      </button>
   </div>
+</div>
+
+<!-- Sign Up Form -->
+<div id="signupModal" class="modal">
+  <div class="modalContent">
+    <span class="close">&times;</span>
+    <p id="signupmodalP"></p>
+    <h1>exBook</h1>
+    <form id="SignupForm">
+      <input type="text" name="username" placeholder="User Name">
+      <input type="text" name="password" placeholder="Password">
+      <input type="number" name="location" placeholder="zipcode">
+      <input type="email" name="email" placeholder="email">
+      <button type="submit" name="submit" class="signup-button-p">Sign Up</button>
+    </form>
+    <hr>
+    <button class="fa fa-facebook" id="fb">
+      <div>Sign Up with Facebook</div>
+    </button>
+  </div>
+</div>
 
     <!-- Posting Form -->
 <div id="postModal" class="modal">
@@ -91,15 +92,14 @@
   </div>
 </div>
 
-    <!-- profile Form -->
-    <div id="profileModal" class="modal">
-    <div class="modalContent">
-      <span class="close">&times;</span>
-      <form id="profileForm">
-      </form>
-
-    </div>
+<!-- profile Form -->
+<div id="profileModal" class="modal">
+  <div class="modalContent">
+    <span class="close">&times;</span>
+    <form id="profileForm">
+    </form>
   </div>
+</div>
 
  <!--  map -->
 <div class="container">
