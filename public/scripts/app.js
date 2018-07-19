@@ -122,12 +122,31 @@ function getBooks() {
   });
 }
 
-//////////////////////begin search function code///////////////////
+  //////////////////////begin search function code///////////////////
 
 $('.searchForm').on('submit', function(event){
   event.preventDefault();
+  var searchData = $(this).serialize();
   console.log('find button clicked!');
-
+  $.ajax({
+    url: book_endpoint,
+    method: 'GET',
+    success: searchSuccess,
+    error: mapError
+  });
+  function searchSuccess(responce){
+    responce.forEach(function(user){
+      for (let i = 0; i < user.posts.length; i++){
+        var bookTitle = user.posts[i].title;
+        if (searchData !== bookTitle){
+          $('#results').html(`<p>Book does not exist!</p>`);
+        } else {
+          $('#results').html(``)
+        }
+      };
+    });
+  };
+  $(this).trigger("reset");
 });
 
 //////////////////////////begin map code//////////////////////////
@@ -187,7 +206,8 @@ responce.forEach(function(user){
       };
     });
   };
-};
+}; //end of map success//
+
 //incase of error//
 function mapError(error1, error2, error3){
   console.log(error1);
