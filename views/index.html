@@ -116,15 +116,9 @@
     <div class="searchForm">
       <form id="search" method="get" action="" name="quickSearch">
         <fieldset class="fs-search">
-          <input type="hidden" name="ds" value="20">
-          <input type="hidden" name="sts" value="t">
           <label for="searchBy">Search</label>
-          <select id="searchBy" name="sby">
-            <option value="tit">By Title</option>
-            <option value="volume">By ISBN</option>
-          </select>
-          <input class="search-in" id="searchText" type="text" name="stext" maxlength="100" aria-label="Search Exbook">
-          <button id="search-btn" type="submit"><span>Find</span></button>
+          <input class="search-in" id="searchText" type="text" name="title" aria-label="Search Exbook">
+          <button id="search-btn" type="submit">Find</button>
         </fieldset>
         <input type="hidden" name="cm-sp" value="Search-result">
       </form>

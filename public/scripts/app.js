@@ -134,6 +134,7 @@ $('.searchForm').on('submit', function(event){
     success: searchSuccess,
     error: mapError
   });
+  console.log(this)
   function searchSuccess(responce){
     responce.forEach(function(user){
       for (let i = 0; i < user.posts.length; i++){
