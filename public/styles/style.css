@@ -3,6 +3,9 @@
 /*
 main stuff
 ================================================*/
+*{
+  box-sizing: border-box;
+}
 body{
   font-family: 'Nunito', sans-serif;
   font-size: 16px;
@@ -30,6 +33,17 @@ hr {
 
 p {
   margin:0;
+}
+.column {
+    float: left;
+    width: 25%;
+    padding: 20px;
+}
+/* Clear floats after the columns */
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
 }
 /*
 Nav Bar
@@ -260,6 +274,11 @@ nav h2 {
 
 .navButtons h3{
   padding: 1em;
+}
+    /*Search form*/
+.fieldset button{
+  width: 15px;
+
 }
 
 
