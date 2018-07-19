@@ -3,21 +3,39 @@ var book_endpoint = "http://localhost:3000/api/users/"
 ///////////////////////////////////////////
 //////////nav function////////////
 ///////////////////////////////////////////
-function myFunction() {
-    var x = document.getElementById("myTopnav");
-    if (x.className === "topnav") {
-        x.className += " responsive";
-    } else {
-        x.className = "topnav";
-    }
-};
 $(document).ready(function() {
   console.log('app.js loaded!');
   getBooks();
+
+  $('.hamburger').on('click', function(){
+    event.preventDefault();
+  $('.miniNav').toggle('fast');
+  $(window).on('resize',function(){
+    if (window.innerWidth >= 700){
+      $('.miniNav').hide();
+    };
+  });
+});
+  $('.miniNav a').on('click', function(){
+    event.preventDefault();
+    $('.miniNav').toggle('fast');
+  $(window).on('resize',function(){
+    if (window.innerWidth >= 700){
+      $('.miniNav').hide();
+    };
+  });
+  });
+
+  $('.hamburger').mouseenter(function(){
+    $('.bar').css('background-color', '#FFC7E2')
+  });
+  $('.hamburger').mouseleave(function(){
+    $('.bar').css('background-color', '#B2678C')
+  });
 ///////////////////////////////////////////
 //////////login button function////////////
 ///////////////////////////////////////////
-$('#loginButton').on('click', function(){
+$('.loginButton').on('click', function(){
   event.preventDefault();
     $('#loginModal').show();
 });
@@ -40,7 +58,7 @@ $('.close').on('click', function(){
 ////////////////////////////////////////////
 //////////post button function//////////////
 ////////////////////////////////////////////
-$('#postButton').on('click', function(){
+$('.postButton').on('click', function(){
   event.preventDefault();
   $('#postModal').show();
 })
@@ -132,7 +150,7 @@ function mapSuccess(responce){
       var mapTitle = user.posts[i].title;
       var mapPrice = user.posts[i].price;
       var mapId = user.posts[i]._id;
-      $('#results').append(`<p data-id="${mapId}"> ${mapTitle}, $${mapPrice} <button id="deletePost">delete</button> </p>`);
+      $('#results').append(`<p data-id="${mapId}"><button id="deletePost">delete</button> ${mapTitle}, $${mapPrice}</p>`);
     }
 });
   console.log(responce);

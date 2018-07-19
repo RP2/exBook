@@ -4,12 +4,8 @@
   <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1">
       <!-- set viewport to device width to allow responsiveness -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- Bootstrap CDN -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <!-- Custom CSS -->
     <link rel="stylesheet" href="/styles/style.css">
-    <!--Font style -->
-    <link href="https://fonts.googleapis.com/css?family=Arvo" rel="stylesheet">
     <!-- Add hamburg icon library -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <!-- outsite resourse? -->
@@ -21,20 +17,23 @@
 
   <title>exBook</title>
 </head>
-  <header>
-    <nav>
-      <div class="topnav" id="myTopnav">
-        <a id="logo" class="active">exBook</a>
-        <a href="" id="loginButton" class="functionButton">Login</a>
-        <a href="" id="postButton" class="functionButton">Post</a>
-      <a href="javascript:void(0);" class="icon" onclick="myFunction()">
-        <i class="fa fa-bars"></i> </a>
-         </div>
-      </div>
-    </nav>
-  </header>
 <body>
-
+  <nav> <!--nav bar-->
+    <h2>exBook</h2>
+    <div class="hamburger">
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+    </div>
+    <div class="navButtons">
+      <a href="" class="loginButton"><h3>Login</h3></a>
+      <a href="" class="postButton"><h3>Post</h3></a>
+    </div>
+    <div class="miniNav">
+      <a href="" class="loginButton"><h3>Login</h3></a>
+      <a href="" class="postButton"><h3>Post</h3></a>
+    </div>
+  </nav>
   <!-- Login Form -->
   <div id="loginModal" class="modal">
     <div class="modalContent">
@@ -107,39 +106,32 @@
  <!--  map -->
 <div class="container">
   <div class="column">
-    <div class="col-xs-12 col-md-12">
+    <div class="googleMap">
       <div id="map"></div>
     </div>
-
-<!--  Search form -->
-    <div class="col-xs-12 col-md-12">
-      <div id="info">
-        <h1>exBook - Find your Book</h1>
-      </div>
+    <div id="info">
+      <h1>exBook - Find your Book</h1>
     </div>
-    <div class="col-xs-12 col-md-12">
-      <div class="searchForm">
-        <form id="search" method="get" action="" name="quickSearch">
-          <fieldset class="fs-search">
-            <input type="hidden" name="ds" value="20">
-            <input type="hidden" name="sts" value="t">
-            <label for="searchBy">Search</label>
-            <select id="searchBy" name="sby">
-              <option value="tit">By Title</option>
-              <option value="volume">By ISBN</option>
-            </select>
-            <input class="search-in" id="searchText" type="text" name="stext" maxlength="100" aria-label="Search Exbook">
-            <button id="search-btn" type="submit"><span>Find</span></button>
-          </fieldset>
-          <input type="hidden" name="cm-sp" value="Search-result">
-        </form>
-      </div>
+<!--  Search form -->
+    <div class="searchForm">
+      <form id="search" method="get" action="" name="quickSearch">
+        <fieldset class="fs-search">
+          <input type="hidden" name="ds" value="20">
+          <input type="hidden" name="sts" value="t">
+          <label for="searchBy">Search</label>
+          <select id="searchBy" name="sby">
+            <option value="tit">By Title</option>
+            <option value="volume">By ISBN</option>
+          </select>
+          <input class="search-in" id="searchText" type="text" name="stext" maxlength="100" aria-label="Search Exbook">
+          <button id="search-btn" type="submit"><span>Find</span></button>
+        </fieldset>
+        <input type="hidden" name="cm-sp" value="Search-result">
+      </form>
     </div>
   </div>
 </div>
   <!--  Results -->
-  <div class="col-xs-12 col-md-12" class="resule-cube">
-    <div id="results"></div>
-  </div>
+<div id="results"></div>
 </body>
 </html>

@@ -2,7 +2,6 @@
 
 textbook exchange for students
 
-//////////////////////////////
 
 server is seeded with some users with embeded posts.
 
