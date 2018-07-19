@@ -27,9 +27,15 @@ a {
 hr {
   width: 50vw;
 }
-
 p {
   margin:0;
+}
+input{
+  padding: 10px;
+}
+button{
+  padding: 8px;
+  margin-top: 5px;
 }
 /*
 Nav Bar
@@ -171,6 +177,11 @@ fieldset{
 #info h1{
   text-align: center;
 }
+.searchDiv input{
+  flex-flow: row;
+  width: 70%;
+  padding-top: 12px;
+}
 
 /*Login Form
 ================================================*/
@@ -261,6 +272,36 @@ nav h2 {
 .navButtons h3{
   padding: 1em;
 }
-
-
-} /* end of media query */
+/* Media Sign Up Form */
+#signupModal input{
+  flex-flow: column;
+  display: block;
+  width: 95%;
+}
+/* Media login Form */
+#loginModal input{
+  flex-flow: column;
+  display: block;
+  width: 95%;
+}
+/* Media posting Form */
+#postModal input{
+  flex-flow: column;
+  display: block;
+  width: 100%;
+}
+/* Media search Form */
+#searchForm l input{
+  flex-flow: column;
+  display: block;
+  width:95%;
+}
+#searchForm button{
+  flex-flow: column;
+  display: block;
+  width: 70%;
+  margin-top: 5px;
+  margin-left: 6em;
+}
+/* Media screen end */
+}
