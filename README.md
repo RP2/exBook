@@ -1,7 +1,6 @@
-# exBook
+# exBook :
 
 ## textbook exchange for students
-
 
 1. server is seeded with some users with embeded posts.
 
@@ -11,4 +10,11 @@
 
 4. on post or delete, page preforms another ajax call to refresh the map and results list.
 
-5.
+
+## acomplishments
+
+## challenges
+
+## cool code snippets
+
+## other
