@@ -39,6 +39,9 @@ $('.loginButton').on('click', function(){
 $('.close').on('click', function(){
     $('#loginModal').hide();
   });
+$('#loginSubmit').on('click', function(){
+    $('#loginModal').hide();
+  });
 //////////signup button function////////////
 $('#signupButton').on('click', function(){
   event.preventDefault();
@@ -72,7 +75,11 @@ $('.close').on('click', function(){
 
 /////////////////////begin login function code//////////////////////
 
-
+$('#loginForm').on('submit', function(event){
+  event.preventDefault();
+  var loginData = $(this).serialize();
+  console.log(loginData);
+})
 
 /////////////////////begin post function code//////////////////////
 
@@ -191,7 +198,7 @@ responce.forEach(function(user){
           success: pinSuccess,
         });//success function//
       function pinSuccess(responce){
-        console.log(responce.results[0].geometry.location);
+        // console.log(responce.results[0].geometry.location);
         var pinLat = responce.results[0].geometry.location.lat;
         var pinLng = responce.results[0].geometry.location.lng;
         var LatLng = new google.maps.LatLng(pinLat, pinLng);
