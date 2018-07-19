@@ -126,9 +126,7 @@ function getBooks() {
 
 $('#searchForm').on('submit', function(event){
   event.preventDefault();
-    console.log(this)
   var searchData = $(this).serialize();
-  console.log('find button clicked!');
   $.ajax({
     url: book_endpoint,
     method: 'GET',
@@ -139,10 +137,13 @@ $('#searchForm').on('submit', function(event){
     responce.forEach(function(user){
       for (let i = 0; i < user.posts.length; i++){
         var bookTitle = user.posts[i].title;
-        if (searchData !== bookTitle){
+        console.log(searchData, bookTitle)
+        if(searchData === bookTitle[i]){
+          $('#results').html('');
+          $('#results').append(`${bookTitle[i]}`);
+        }
+        if(searchData !== bookTitle[i]) {
           $('#results').html(`<p>Book does not exist!</p>`);
-        } else {
-          $('#results').html(`${bookTitle}`)
         }
       };
     });
