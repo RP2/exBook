@@ -42,6 +42,9 @@ button{
   padding: 8px;
   margin-top: 5px;
 }
+#info h2{
+  text-align: center;
+}
 /*
 Nav Bar
 ========================*/
@@ -176,15 +179,18 @@ fieldset{
   padding: 8px
 }
 
-#search-btn{
-  margin-top: 10px;
-}
 #info h1{
   text-align: center;
 }
-.searchDiv input{
+.searchDiv{
   flex-flow: row;
+}
+
+.searchDiv input{
   width: 70%;
+  padding-top: 12px;
+}
+.searchDiv button{
   padding-top: 12px;
 }
 
@@ -196,7 +202,7 @@ fieldset{
 #loginModal h1{
   padding-left: 0.4em;
 }
-#loginModal h4{
+#loginModal p{
   margin-left: 8em;
   margin-right: 2em;
   flex-flow: row;
@@ -205,9 +211,10 @@ fieldset{
   flex-flow: column;
   width: 50%;
 }
+
 #loginModal button{
-  flex-flow: column;
-  width: 55%;
+  flex-flow: row;
+  width: 53%;
   margin-top: 10px;
   text-align: center;
 }
@@ -221,7 +228,7 @@ fieldset{
 /*sign up Form
 ================================================*/
 #signupModal{
-    text-align: center;
+  text-align: center;
 }
 /*Button*/
 #signupButton {
@@ -235,11 +242,15 @@ fieldset{
   flex-flow: column;
   width: 50%;
 }
+#signupModal .signup-button-p{
+  text-align: center;
+}
 #signupModal button{
-  flex-flow: column;
-  width: 55%;
+  flex-flow: row;
+  width: 53%;
   margin-top: 10px;
   text-align: center;
+
 }
 /* Add a hover effect if you want */
 .fa:hover {
@@ -316,6 +327,12 @@ nav h2 {
   display: block;
   width: 95%;
 }
+#signupModal button{
+  flex-flow: row;
+  width: 100%;
+  margin-top: 10px;
+  text-align: center;
+}
 /* Media login Form */
 #loginModal input{
   flex-flow: column;
@@ -323,13 +340,13 @@ nav h2 {
   width: 95%;
 }
 #loginModal button{
-  flex-flow: column;
+  flex-flow: row;
   width: 100%;
   margin-top: 10px;
   text-align: center;
 }
-#loginModal h4{
-  padding: 0;
+#loginModal p{
+  padding-left: 0;
   margin:0;
 }
 #loginModal #signupButton{
@@ -344,6 +361,13 @@ nav h2 {
     margin-right: -5em;
     width: 95%;
 }
+#postModal button{
+  flex-flow: row;
+  width: 100%;
+  margin-top: 10px;
+  text-align: center;
+}
+
 /* Media search Form */
 #searchForm input{
   flex-flow: column;
@@ -351,11 +375,13 @@ nav h2 {
   width:95%;
 }
 #searchForm button{
-  flex-flow: column;
+  flex-flow: row;
   display: block;
-  width: 70%;
+  width: 100%;
   margin-top: 5px;
-  margin-left: 6em;
+}
+#searchForm label{
+display: none;
 }
 /* Media screen end */
 }
