@@ -141,7 +141,7 @@ $('.searchForm').on('submit', function(event){
         if (searchData !== bookTitle){
           $('#results').html(`<p>Book does not exist!</p>`);
         } else {
-          $('#results').html(``)
+          $('#results').html(`${bookTitle}`)
         }
       };
     });
