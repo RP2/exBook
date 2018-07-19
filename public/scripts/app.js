@@ -1,12 +1,11 @@
 //our backend data//
 var book_endpoint = "http://localhost:3000/api/users/"
-///////////////////////////////////////////
-//////////nav function////////////
-///////////////////////////////////////////
+
+//document on ready//
 $(document).ready(function() {
   console.log('app.js loaded!');
   getBooks();
-
+//////////nav function////////////
   $('.hamburger').on('click', function(){
     event.preventDefault();
   $('.miniNav').toggle('fast');
@@ -25,16 +24,14 @@ $(document).ready(function() {
     };
   });
   });
-
+//hamburger on hover//
   $('.hamburger').mouseenter(function(){
     $('.bar').css('background-color', '#FFC7E2')
   });
   $('.hamburger').mouseleave(function(){
     $('.bar').css('background-color', '#B2678C')
   });
-///////////////////////////////////////////
 //////////login button function////////////
-///////////////////////////////////////////
 $('.loginButton').on('click', function(){
   event.preventDefault();
     $('#loginModal').show();
@@ -42,9 +39,7 @@ $('.loginButton').on('click', function(){
 $('.close').on('click', function(){
     $('#loginModal').hide();
   });
-////////////////////////////////////////////
 //////////signup button function////////////
-////////////////////////////////////////////
 $('#signupButton').on('click', function(){
   event.preventDefault();
     $('#signupModal').show();
@@ -55,9 +50,7 @@ $('#signupButton').on('click', function(){
 $('.close').on('click', function(){
     $('#signupModal').hide();
   });
-////////////////////////////////////////////
 //////////post button function//////////////
-////////////////////////////////////////////
 $('.postButton').on('click', function(){
   event.preventDefault();
   $('#postModal').show();
@@ -68,9 +61,7 @@ $('.close').on('click', function(){
 $('#postSubmit').on('click', function(){
     $('#postModal').hide();
   });
-////////////////////////////////////////////
 //////////profile button function///////////
-////////////////////////////////////////////
 $('#profileButton').on('click', function(){
   event.preventDefault();
   $('#profileModal').show();
@@ -78,6 +69,10 @@ $('#profileButton').on('click', function(){
 $('.close').on('click', function(){
     $('#profileModal').hide();
   });
+
+/////////////////////begin login function code//////////////////////
+
+
 
 /////////////////////begin post function code//////////////////////
 
@@ -157,14 +152,14 @@ $('#searchForm').on('submit', function(event){
   var mapTitle;
   var thePosition;
   var image = {
-    url: 'https://git.generalassemb.ly/sf-wdi-46/jquery-geoquakes-lab/blob/master/images/earthquake.png?raw=true',
-    size: new google.maps.Size(20,32),
+    url: '../images/bookPin.png',
+    size: new google.maps.Size(100,100),
     origin: new google.maps.Point(0,0),
     anchor: new google.maps.Point(0,0),
     scaledSize: new google.maps.Size(25,25)
   };
 
-
+//appends results to the #results div//
 function mapSuccess(responce){
   responce.forEach(function(user){
     console.log(user.posts);
@@ -185,7 +180,7 @@ function mapSuccess(responce){
         center: {lat: 37.78, lng: -122.44},
         zoom: 10
     });
-//show map markers
+//show map markers based on user posts//
 responce.forEach(function(user){
     for (var i = 0; i < user.posts.length; i++){
       var zip = user.posts[i].location;
