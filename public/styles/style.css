@@ -19,6 +19,10 @@ h3 {
   margin: 0;
   color: #B2678C;
 }
+h4{
+    margin: 0;
+  color:#79B279
+}
 a {
   text-decoration: none;
   color: #B2678C;
@@ -187,14 +191,15 @@ fieldset{
 /*Login Form
 ================================================*/
 #loginModal{
-    text-align: center;
+  text-align: center;
 }
 #loginModal h1{
-padding-left: 0.5em;
+  padding-left: 0.4em;
 }
-#loginModal .span{
-padding-left: 2em;
-margin-left: 2em;
+#loginModal h4{
+  margin-left: 8em;
+  margin-right: 2em;
+  flex-flow: row;
 }
 #loginModal input{
   flex-flow: column;
@@ -205,8 +210,8 @@ margin-left: 2em;
   width: 55%;
   margin-top: 10px;
   text-align: center;
-
 }
+
 .signup-button-p {
   color: white;
   position: wrap;
@@ -226,20 +231,16 @@ margin-left: 2em;
 #signupButton{
   border:none;
 }
-/*Posting Form
-================================================*/
-#postSubmit {
-  margin-top: 10px;
-  width: 100%;
+#signupModal input{
+  flex-flow: column;
+  width: 50%;
 }
-#postForm h1{
+#signupModal button{
+  flex-flow: column;
+  width: 55%;
+  margin-top: 10px;
   text-align: center;
 }
-/*facebook icon*/
-.fa {
-  width: 100%;
-}
-
 /* Add a hover effect if you want */
 .fa:hover {
     opacity: 0.7;
@@ -249,6 +250,28 @@ margin-left: 2em;
 .fa-facebook {
     font-family: 'Roboto', sans-serif;
 }
+/*facebook icon*/
+.fa {
+  width: 100%;
+}
+
+
+/*Posting Form
+================================================*/
+#postModal{
+  text-align: center;
+}
+#postSubmit {
+  flex-flow: row;
+  width: 55%;
+  margin-top: 10px;
+  text-align: center;
+}
+#postModal input{
+  flex-flow: column;
+  width: 50%;
+}
+
 /* Result*/
 #results{
     margin: 1%;
@@ -305,14 +328,24 @@ nav h2 {
   margin-top: 10px;
   text-align: center;
 }
+#loginModal h4{
+  padding: 0;
+  margin:0;
+}
+#loginModal #signupButton{
+  flex-flow: row;
+  display: block;
+}
 /* Media posting Form */
 #postModal input{
   flex-flow: column;
-  display: block;
-  width: 100%;
+    display: flex;
+    margin-top: 5px;
+    margin-right: -5em;
+    width: 95%;
 }
 /* Media search Form */
-#searchForm l input{
+#searchForm input{
   flex-flow: column;
   display: block;
   width:95%;
