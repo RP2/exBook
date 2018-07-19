@@ -10,10 +10,16 @@ body{
   background-color: #ffffff;
   color: #79B279;
 }
+<<<<<<< HEAD
 
 h2 {
   margin: 0;
   color: #B2678C;
+=======
+input{
+  padding: 5px;
+  margin: 5px;
+>>>>>>> 7c9d2b941d49bb742f1ff8a13fb2a795773517d0
 }
 h3 {
   margin: 0;
@@ -100,6 +106,7 @@ button:hover {
   border: solid #FFC7E2;
 }
 
+<<<<<<< HEAD
 button:not(:hover){
   transition: .2s ease;
   color: #B2678C;
@@ -108,6 +115,10 @@ button:not(:hover){
 
 
 /* modals
+=======
+
+/* map
+>>>>>>> 7c9d2b941d49bb742f1ff8a13fb2a795773517d0
 ================================================*/
 .container {
   padding: 2em;
@@ -161,8 +172,14 @@ fieldset{
 }
 
 #search {
+<<<<<<< HEAD
   background: #E0FFE0;
   padding: 8px
+=======
+  background: #dddddd;
+  padding: 8px;
+
+>>>>>>> 7c9d2b941d49bb742f1ff8a13fb2a795773517d0
 }
 
 #search-btn{
@@ -170,6 +187,9 @@ fieldset{
 }
 #info h1{
   text-align: center;
+}
+.searchForm input{
+width: 80%
 }
 
 /*Login Form
@@ -209,6 +229,7 @@ fieldset{
 #postForm h1{
   text-align: center;
 }
+
 /*facebook icon*/
 .fa {
   width: 100%;
