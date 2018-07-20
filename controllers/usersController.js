@@ -60,8 +60,9 @@ function update(req, res) {
     foundUser.location = req.body.location;
     foundUser.contact = req.body.contact;
     foundUser.picture = req.body.picture;
-    foundUser.posts = req.body.posts
+    foundUser.posts = req.body.posts;
     foundUser.save(function(err, savedUser) {
+      console.log(savedUser)
       if (err) { console.log('saving altered user failed'); }
       res.json(savedUser);
     });

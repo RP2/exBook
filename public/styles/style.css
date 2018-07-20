@@ -72,6 +72,10 @@ nav div a h3:not(:hover){
   display: none;
 }
 
+#editUserForm {
+  display: none;
+}
+
 .navButtons {
   display: flex;
   flex-direction: row;

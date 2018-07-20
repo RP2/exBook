@@ -67,10 +67,10 @@
     <p id="signupmodalP"></p>
     <h1>exBook</h1>
     <form id="signUpForm">
-      <input type="text" name="username" placeholder="User Name">
-      <input type="text" name="password" placeholder="Password">
-      <input type="number" name="location" placeholder="zipcode">
-      <input type="email" name="contact" placeholder="email">
+      <input type="text" name="username" placeholder="User Name" pattern=".{1,}"   required title="1 characters minimum">
+      <input type="text" name="password" placeholder="Password" pattern=".{1,}"   required title="1 characters minimum">
+      <input type="number" name="location" placeholder="zipcode" pattern=".{1,}"   required title="1 characters minimum">
+      <input type="email" name="contact" placeholder="email" pattern=".{1,}"   required title="1 characters minimum">
       <button type="submit" name="submit" id="signUpButton">Sign Up</button>
     </form>
     <hr>
@@ -86,11 +86,11 @@
     <span class="close">&times;</span>
     <form id="postForm">
       <h1>exBook</h1>
-      <input type="text" name="subject" placeholder="subject">
-      <input type="text" name="title" placeholder="title">
-      <input type="number" name="volume" placeholder="volume/ISBN">
-      <input type="number" name="price" placeholder="price">
-      <input type="number" name="location" placeholder="zipcode">
+      <input type="text" name="subject" placeholder="subject" pattern=".{1,}"   required title="1 characters minimum">
+      <input type="text" name="title" placeholder="title" pattern=".{1,}"   required title="1 characters minimum">
+      <input type="number" name="volume" placeholder="volume/ISBN" pattern=".{1,}"   required title="1 characters minimum">
+      <input type="number" name="price" placeholder="price" pattern=".{1,}"   required title="1 characters minimum">
+      <input type="number" name="location" placeholder="zipcode" pattern=".{1,}"   required title="1 characters minimum">
       <button type="submit" name="submit" id="postSubmit">submit</button>
     </form>
   </div>
@@ -102,6 +102,15 @@
     <span class="close">&times;</span>
     <div id="userProfile">
     </div>
+    <button id="editUserButton">Edit acccount info</button>
+    <button id="deleteUserButton">Delete account?</button>
+    <form id="editUserForm">
+      <input type="text" name="username" placeholder="User Name" pattern=".{1,}"   required title="1 characters minimum">
+      <input type="text" name="password" placeholder="Password" pattern=".{1,}"   required title="1 characters minimum">
+      <input type="number" name="location" placeholder="zipcode" pattern=".{1,}"   required title="1 characters minimum">
+      <input type="email" name="contact" placeholder="email" pattern=".{1,}"   required title="1 characters minimum">
+      <button type="submit" name="submit" class="close">Submit</button>
+    </form>
   </div>
 </div>
 

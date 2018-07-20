@@ -100,11 +100,33 @@ $('#loginForm').on('submit', function(event){
     console.log('Res', responce)
     signedIn = responce._id;
     console.log('user', signedIn)
-    $('.loginButton').hide()
-    $('.profileButton').show()
-    $('.logoutButton').show()
-    $('#userProfile').append(`<p id="profileUsername">Username: ${responce.username}</p><p id="profileLocation">Location: ${responce.location}</p>`)
+    $('.loginButton').hide();
+    $('.profileButton').show();
+    $('.logoutButton').show();
+    $('#userProfile').append(`<p id="profileUsername">Username: ${responce.username}</p><p id="profileLocation">Location: ${responce.location}</p>`);
   };
+})
+
+/////////////////////begin user edit function code//////////////////////
+
+$('#editUserButton').on('click', function(){
+  $('#editUserForm').show();
+})
+
+$('#editUserForm').on('submit', function(event){
+  event.preventDefault();
+  var editData = $(this).serialize();
+  console.log('edit data', editData)
+  $.ajax({
+    url: `http://localhost:3000/api/users/${signedIn}`,
+    method: 'PUT',
+    data: editData,
+    success: editSuccess,
+    error: mapError
+  });
+  function editSuccess(responce){
+    console.log('success!')
+  }
 })
 
 /////////////////////begin signup function code//////////////////////
