@@ -104,6 +104,7 @@ $('#loginForm').on('submit', function(event){
     $('.loginButton').hide()
     $('.profileButton').show()
     $('.logoutButton').show()
+    $('#userProfile').append(`<p id="profileUsername">username: ${responce.username}</p><p id="profileLocation">location: ${responce.location}</p>`)
   };
 })
 
