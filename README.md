@@ -12,15 +12,16 @@
   * delete their own posts
   * edit their account info
   * signup or login to an account
+  * delete their account
 - Book posts for all users are shown on the Google Map and the results
 
 
 ## Planned Features
 
 - admin account
-- Users can delete their account
 - Encrypting passwords
 - Clicking map marker shows book information
+- Add another external API
 
 ## Heroku Link
 
