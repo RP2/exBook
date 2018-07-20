@@ -28,5 +28,3 @@ Inline-style:
 ![alt text](/deliverables/login.png)
 Inline-style:
 ![alt text](/deliverables/map-points.png)
-Inline-style:
-![alt text](/deliverables/)
