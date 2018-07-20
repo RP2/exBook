@@ -1,5 +1,5 @@
 //our backend data//
-var book_endpoint = "http://exbook.localhost:3000/api/users/"
+var book_endpoint = "http://exbook.herokuapp.com/api/users/"
 
 let signedIn;
 
@@ -90,7 +90,7 @@ $('#loginForm').on('submit', function(event){
   var loginData = $(this).serialize();
   console.log(loginData);
   $.ajax({
-    url: "http://exbook.localhost:3000",
+    url: "http://exbook.herokuapp.com",
     method: 'POST',
     data: loginData,
     success: loginSuccess,
@@ -118,7 +118,7 @@ $('#editUserForm').on('submit', function(event){
   var editData = $(this).serialize();
   console.log('edit data', editData)
   $.ajax({
-    url: `http://exbook.localhost:3000/api/users/${signedIn}`,
+    url: `http://exbook.herokuapp.com/api/users/${signedIn}`,
     method: 'PUT',
     data: editData,
     success: editSuccess,
@@ -138,7 +138,7 @@ $('#editUserForm').on('submit', function(event){
 $('#deleteUserButton').on('click', function(event){
   event.preventDefault();
   $.ajax({
-    url: `http://exbook.localhost:3000/api/users/${signedIn}`,
+    url: `http://exbook.herokuapp.com/api/users/${signedIn}`,
     method: 'DELETE',
     success: function(result){
       location.reload()
@@ -153,7 +153,7 @@ $('#signUpForm').on('submit', function(event){
   event.preventDefault();
   var signData = $(this).serialize();
   $.ajax({
-    url: "http://exbook.localhost:3000/api/users",
+    url: "http://exbook.herokuapp.com/api/users",
     method: 'POST',
     data: signData,
     success: signSuccess,
