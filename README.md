@@ -25,7 +25,7 @@
 
 ## Heroku Link
 
-https://github.com/RP2/exBook
+https://exbook.herokuapp.com
 
 ## Screenshots
 
