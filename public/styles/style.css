@@ -274,7 +274,7 @@ fieldset{
 }
 #postSubmit {
   flex-flow: row;
-  width: 55%;
+  width: 53%;
   margin-top: 10px;
   text-align: center;
 }
@@ -291,6 +291,7 @@ fieldset{
     height: auto;
     display: flex;
     flex-direction: column;
+    padding-left: 20px;
 }
 
 /*
