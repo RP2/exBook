@@ -11,10 +11,12 @@
 - Book posts for all users are shown on the Google Map and the results
 - Users can search by book titles
 - Users can delete their own posts
+- Users can edit their account info
 
 ## Planned Features
 
-- Individual user profile pages
+- admin account
+- Users can delete their account
 - Encrypting passwords
 - Clicking map marker shows book information
 
