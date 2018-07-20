@@ -126,6 +126,10 @@ $('#editUserForm').on('submit', function(event){
   });
   function editSuccess(responce){
     console.log('success!')
+    $('#editUserForm').hide();
+    $('#profileModal').hide();
+    $('#userProfile').html('')
+    $('#userProfile').append(`<p id="profileUsername">Username: ${responce.username}</p><p id="profileLocation">Location: ${responce.location}</p>`);
   }
 })
 
