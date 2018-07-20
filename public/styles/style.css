@@ -294,7 +294,28 @@ fieldset{
   flex-flow: column;
   width: 50%;
 }
-
+/*Profile Form
+================================================*/
+#profileModal{
+  text-align: center;
+}
+#profileModal button{
+  flex-flow: row;
+  width: 25%;
+  margin-left: 7px;
+  text-align: center;
+}
+#editUserForm input{
+  flex-flow: column;
+  width: 50%;
+}
+#editUserForm  button{
+  flex-flow: row;
+  width: 53%;
+  margin-top: 10px;
+  margin-left : -2px;
+  text-align: center;
+}
 /* Result*/
 #results{
     margin: 1%;
@@ -305,6 +326,7 @@ fieldset{
     flex-direction: column;
     padding-left: 20px;
 }
+
 
 /*
 media screen
@@ -395,6 +417,27 @@ nav h2 {
 }
 #searchForm label{
 display: none;
+}
+/* Media profile Form */
+#profileModal{
+  text-align: center;
+}
+#profileModal button{
+  width: 45%;
+  margin-left: -2px;
+}
+
+#editUserForm input{
+  flex-flow: column;
+  display: block;
+  width:95%;
+}
+#editUserForm button{
+  flex-flow: row;
+  display: block;
+  width: 100%;
+  margin-top: 5px;
+  margin-left: -2px;
 }
 /* Media screen end */
 }
