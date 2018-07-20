@@ -26,10 +26,14 @@ https://github.com/RP2/exBook
 
 ## Screenshots
 
+####CRUD controllers
 ![alt text](/deliverables/controller.png)
 
+####Create or destroy posts
 ![alt text](/deliverables/create-destroy-posts.png)
 
+####Login feature
 ![alt text](/deliverables/login.png)
 
+####Reading database and plotting
 ![alt text](/deliverables/map-points.png)
