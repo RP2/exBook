@@ -81,7 +81,6 @@ $('.profileButton').on('click', function(){
 $('.close').on('click', function(){
     $('#profileModal').hide();
   });
-//populate profile modal//
 
 
 /////////////////////begin login function code//////////////////////
