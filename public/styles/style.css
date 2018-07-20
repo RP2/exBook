@@ -63,7 +63,7 @@ nav div a h3:not(:hover){
   transition: .2s ease;
   color: #B2678C;
 }
-
+/*logout button*/
 .logoutButton {
   display: none;
 }
