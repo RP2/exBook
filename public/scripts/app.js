@@ -74,13 +74,15 @@ $('#postSubmit').on('click', function(){
     $('#postModal').hide();
   });
 //////////profile button function///////////
-$('#profileButton').on('click', function(){
+$('.profileButton').on('click', function(){
   event.preventDefault();
   $('#profileModal').show();
 })
 $('.close').on('click', function(){
     $('#profileModal').hide();
   });
+//populate profile modal//
+
 
 /////////////////////begin login function code//////////////////////
 
@@ -100,6 +102,7 @@ $('#loginForm').on('submit', function(event){
     signedIn = responce._id;
     console.log('user', signedIn)
     $('.loginButton').hide()
+    $('.profileButton').show()
     $('.logoutButton').show()
   };
 })
@@ -138,7 +141,6 @@ $('#postForm').on('submit', function(event){
 });
 
 $('#results').on('click', '#deletePost', function(event) {
-  // var id = $(this).parent('#deletePost').data('mapId');
   console.log(this);
   var id = $(this).parent().data('id');
   console.log('id', id);
@@ -164,7 +166,7 @@ function getBooks() {
   });
 }
 
-  //////////////////////begin search function code///////////////////
+//////////////////////begin search function code///////////////////
 
 $('#searchForm').on('submit', function(event){
   event.preventDefault();
@@ -181,8 +183,6 @@ $('#searchForm').on('submit', function(event){
       console.log(user)
       for (let i = 0; i < user.posts.length; i++){
         var bookTitle = user.posts[i].title;
-        // console.log('Looped Book Title = ', bookTitle)
-        // console.log(searchData, bookTitle)
         if (searchData == bookTitle){
           console.log('found book!', searchData, ' = ', bookTitle);
           $('#results').append(`<h3>${bookTitle} exists!</h3>`);
@@ -238,7 +238,6 @@ responce.forEach(function(user){
           success: pinSuccess,
         });//success function//
       function pinSuccess(responce){
-        // console.log(responce.results[0].geometry.location);
         var pinLat = responce.results[0].geometry.location.lat;
         var pinLng = responce.results[0].geometry.location.lng;
         var LatLng = new google.maps.LatLng(pinLat, pinLng);

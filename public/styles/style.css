@@ -68,6 +68,10 @@ nav div a h3:not(:hover){
   display: none;
 }
 
+.profileButton {
+  display: none;
+}
+
 .navButtons {
   display: flex;
   flex-direction: row;
