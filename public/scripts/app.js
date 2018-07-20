@@ -97,6 +97,10 @@ $('#loginForm').on('submit', function(event){
   };
 })
 
+/////////////////////begin signup function code//////////////////////
+
+$('signUpForm')
+
 /////////////////////begin post function code//////////////////////
 
 $('#postForm').on('submit', function(event){
