@@ -44,6 +44,10 @@ $('.close').on('click', function(){
 $('#loginSubmit').on('click', function(){
     $('#loginModal').hide();
   });
+//////////logout button function////////////
+$('.logoutButton').on('click', function(){
+  location.reload()
+})
 //////////signup button function////////////
 $('#signupButton').on('click', function(){
   event.preventDefault();
@@ -95,7 +99,8 @@ $('#loginForm').on('submit', function(event){
     console.log('Res', responce)
     signedIn = responce._id;
     console.log('user', signedIn)
-    $('.loginButton').removeClass('loginButton').addClass('logoutButton').html('<h3>Sign out</h3>')
+    $('.loginButton').hide()
+    $('.logoutButton').show()
   };
 })
 

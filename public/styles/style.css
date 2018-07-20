@@ -64,6 +64,10 @@ nav div a h3:not(:hover){
   color: #B2678C;
 }
 
+.logoutButton {
+  display: none;
+}
+
 .navButtons {
   display: flex;
   flex-direction: row;
