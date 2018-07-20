@@ -2,7 +2,7 @@
 
 ## Technologies Used
 
-- HTML, CSS, JavaScript, Jquery, MongooseDB, Express
+- HTML, CSS, JavaScript, Jquery, AJAX, MongooseDB, Express, Google Maps
 
 ## Existing Fatures
 

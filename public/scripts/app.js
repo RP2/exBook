@@ -55,6 +55,9 @@ $('#signupButton').on('click', function(){
 $('.close').on('click', function(){
     $('#signupModal').hide();
   });
+$('#signUpButton').on('click', function(){
+    $('#signupModal').hide();
+  });
 //////////post button function//////////////
 $('.postButton').on('click', function(){
   event.preventDefault();
@@ -98,7 +101,7 @@ $('#loginForm').on('submit', function(event){
 
 /////////////////////begin signup function code//////////////////////
 
-$('signUpForm').on('submit', function(event){
+$('#signUpForm').on('submit', function(event){
   event.preventDefault();
   var signData = $(this).serialize();
   $.ajax({
