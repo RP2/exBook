@@ -27,6 +27,7 @@ app.get("/", (req, res) => {
 
 // create a new route for GET /api with callback controllers.api.index
 app.post('/', controllers.users.login);
+app.post('/', controllers.users.create)
 
 app.get('/api', controllers.api.index);
 app.get('/api/users', controllers.users.index);

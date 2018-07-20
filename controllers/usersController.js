@@ -22,7 +22,7 @@ function login(req,res) {
 
 // POST /api/users
 function create(req, res) {
-  // create an user based on request body and send it back as JSON
+  // create a user based on request body and send it back as JSON
   db.User.create(req.body, function(err, user) {
     if (err) { console.log('error', err); }
     res.json(user);

@@ -1,20 +1,27 @@
 # exBook :
 
-## textbook exchange for students
+## Technologies Used
 
-1. server is seeded with some users with embeded posts.
+- HTML, CSS, JavaScript, Jquery, MongooseDB, Express
 
-2. used google maps api to use database data to plot locations based on zipcode.
+## Existing Fatures
 
-3. user can make a new post or delete one of their own (not another user's post).
+- User can signup or login to an account
+- Once logged in, they can make a new book post
+- Book posts for all users are shown on the Google Map and the results
+- Users can search by book titles
+- Users can delete their own posts
 
-4. on post or delete, page preforms another ajax call to refresh the map and results list.
+## Planned Features
 
+- Individual user profile pages
+- Encrypting passwords
+- Clicking map marker shows book information
 
-## acomplishments
+## Screenshots
 
-## challenges
-
-## cool code snippets
-
-## other
+!(/deliverables/controller.png)
+!(/deliverables/create-destroy-posts.png)
+!(/deliverables/login.png)
+!(/deliverables/map-points.png)
+!(/deliverables/)

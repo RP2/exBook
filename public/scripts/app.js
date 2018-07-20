@@ -80,7 +80,6 @@ $('.close').on('click', function(){
 $('#loginForm').on('submit', function(event){
   event.preventDefault();
   var loginData = $(this).serialize();
-  // var loginData = JSON.stringify({username: $('#loginForm input[name="username"]').val(), password: $('#loginForm input[name="password"]').val()});
   console.log(loginData);
   $.ajax({
     url: "http://localhost:3000",
@@ -99,7 +98,21 @@ $('#loginForm').on('submit', function(event){
 
 /////////////////////begin signup function code//////////////////////
 
-$('signUpForm')
+$('signUpForm').on('submit', function(event){
+  event.preventDefault();
+  var signData = $(this).serialize();
+  $.ajax({
+    url: "http://localhost:3000",
+    method: 'POST',
+    data: signData,
+    success: signSuccess,
+    error: mapError
+  });
+  function signSuccess(responce){
+    signedIn = responce._id;
+    $('.loginButton').removeClass('loginButton').addClass('logoutButton').html('<h3>Sign out</h3>')
+  }
+})
 
 /////////////////////begin post function code//////////////////////
 
