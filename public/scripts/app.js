@@ -133,6 +133,20 @@ $('#editUserForm').on('submit', function(event){
   }
 })
 
+/////////////////////begin user edit function code//////////////////////
+
+$('#deleteUserButton').on('click', function(event){
+  event.preventDefault();
+  $.ajax({
+    url: `http://localhost:3000/api/users/${signedIn}`,
+    method: 'DELETE',
+    success: function(result){
+      location.reload()
+    }
+  });
+
+})
+
 /////////////////////begin signup function code//////////////////////
 
 $('#signUpForm').on('submit', function(event){
