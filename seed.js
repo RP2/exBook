@@ -1,4 +1,6 @@
 var db = require("./models");
+var mongoose = require('mongoose');
+var uri = 'mongodb://heroku_2nzq3ptj:rft13d0fv7otomskr09vsoihfs@ds145951.mlab.com:45951/heroku_2nzq3ptj';
 
 var usersList = [
 {
@@ -187,3 +189,9 @@ db.User.remove({}, function(err, users){
   //   process.exit();
   // });
 });
+
+mongoose.connect(uri, options);
+
+var mdb = mongoose.connection;
+
+mdb.on('error', console.error.bind(console, 'connection error:'));
