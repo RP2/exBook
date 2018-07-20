@@ -20,11 +20,10 @@
 
 ## Screenshots
 
-Inline-style:
 ![alt text](/deliverables/controller.png)
-Inline-style:
+
 ![alt text](/deliverables/create-destroy-posts.png)
-Inline-style:
+
 ![alt text](/deliverables/login.png)
-Inline-style:
+
 ![alt text](/deliverables/map-points.png)
