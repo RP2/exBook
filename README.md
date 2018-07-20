@@ -8,10 +8,10 @@
 
 - Users can :
   * search by book titles
+  * make a new book post
   * delete their own posts
   * edit their account info
   * signup or login to an account
-- Once logged in, they can make a new book post
 - Book posts for all users are shown on the Google Map and the results
 
 
