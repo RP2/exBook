@@ -105,7 +105,7 @@ $('#signUpForm').on('submit', function(event){
   event.preventDefault();
   var signData = $(this).serialize();
   $.ajax({
-    url: "http://localhost:3000",
+    url: "http://localhost:3000/api/users",
     method: 'POST',
     data: signData,
     success: signSuccess,
@@ -113,7 +113,7 @@ $('#signUpForm').on('submit', function(event){
   });
   function signSuccess(responce){
     signedIn = responce._id;
-    $('.loginButton').removeClass('loginButton').addClass('logoutButton').html('<h3>Sign out</h3>')
+    $('.navButtons').append('<p>Your account has been created!');
   }
 })
 
