@@ -16,6 +16,6 @@ module.exports = {
 
 mongoose.connect(uri, options);
 
-var db = mongoose.connection;
+var mdb = mongoose.connection;
 
-db.on('error', console.error.bind(console, 'connection error:'));
+mdb.on('error', console.error.bind(console, 'connection error:'));
